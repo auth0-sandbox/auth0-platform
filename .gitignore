@@ -1,0 +1,11 @@
+.archive/
+node_modules/
+package-lock.json
+.DS_Store
+.todo
+appdev-workspace.md
+module01-instructions.md
+module02-instructions.md
+module03-instructions.md
+module04-instructions.md
+module05-instructions.md

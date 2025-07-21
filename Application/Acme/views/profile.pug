@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .content
+    h1 Profile via Management API
+    p
+      | Hello
+      |
+      if user
+        a(href='/user')=user.name
+      else
+        | Anonymous
+      |,
+    if profile    
+        pre #{profile}
+    else
+        p Internal server error

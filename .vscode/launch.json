@@ -1,0 +1,99 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Current File",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "cwd": "${fileDirname}/.."
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Nodemon Current File",
+            "cwd": "${fileDirname}/..",
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--watch",
+                ".",
+                "--watch",
+                ".env"
+            ],
+            "program": "${file}",
+            "restart": true,
+            "console": "internalConsole"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch ACME FM",
+            "cwd": "${workspaceRoot}/Application/Acme",
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--watch",
+                ".",
+                "--watch",
+                ".env"
+            ],
+            "program": "src/app.js",
+            "restart": true,
+            "console": "internalConsole"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Appendix: Launch Acme API",
+            "cwd": "${workspaceRoot}/Application_BFF/API",
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--watch",
+                ".",
+                "--watch",
+                ".env"
+            ],
+            "program": "src/server.js",
+            "restart": true,
+            "console": "internalConsole"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Appendix: Launch BFF API",
+            "cwd": "${workspaceRoot}/Application_BFF/BFF",
+            "runtimeExecutable": "nodemon",
+            "runtimeArgs": [
+                "--watch",
+                ".",
+                "--watch",
+                ".env"
+            ],
+            "envFile": "${workspaceRoot}/.env",
+            "program": "src/server.js",
+            "restart": true,
+            "console": "internalConsole"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Appendix: Launch ACME FM",
+            "cwd": "${workspaceRoot}/Application_BFF/Acme",
+            "runtimeExecutable": "vite",
+            "restart": true,
+            "console": "internalConsole"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Appendix: Launch All",
+            "configurations": [
+                "Appendix: Launch Backend API",
+                "Appendix: Launch BFF API",
+                "Appendix: Launch ACME FM"
+            ]
+        }
+    ]
+}

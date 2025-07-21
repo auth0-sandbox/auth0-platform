@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .content
+    h1 User Info (/userinfo)
+    p
+      | Hello
+      |
+      if user
+        a(href='/user')=user.name
+      else
+        | Anonymous
+      |,
+    if userinfo
+        pre #{userinfo}
+    else
+        p Internal server error
